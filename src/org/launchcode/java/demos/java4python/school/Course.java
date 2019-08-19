@@ -20,6 +20,26 @@ public class Course {
         this(courseName, courseId, numberOfCredits, null );
     }
 
+    public boolean equals(Object o){
+        if (o == this){
+            return true;
+        }
+        if (o == null){
+            return false;
+        }
+        if (o.getClass() != getClass()){
+            return false;
+        }
+        Course theCourse = (Course) o;
+        return theCourse.getCourseId() == getCourseId();
+    }
+
+    public String toString(){
+        return courseName + " (Course ID: " + courseId + "Number of Credits: " + numberOfCredits + ")";
+    }
+    private void addStudent(Student aStudent){
+        studentRoster.add(aStudent);
+    }
     public String getCourseName(){
         return courseName;
     }
